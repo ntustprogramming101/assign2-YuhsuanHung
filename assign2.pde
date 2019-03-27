@@ -15,7 +15,7 @@ final int GAME_OVER = 2;
 int gameState = GAME_START;
 
 int groundhogX1,groundhogY1;//position
-int speed=80/15;
+int speed=80/16;
 
 boolean downPressed = false;
 boolean leftPressed = false;
