@@ -15,7 +15,7 @@ final int GAME_OVER = 2;
 int gameState = GAME_START;
 
 int groundhogX1,groundhogY1;//position
-int speed=80/16;
+int speed=80/16;//15change to 16
 
 boolean downPressed = false;
 boolean leftPressed = false;
@@ -178,6 +178,9 @@ void draw() {
     //touch the solier
     if(groundhogX1<soldierX+80&&groundhogX1+80>soldierX
     &&groundhogY1<soldierY+80&&groundhogY1+80>soldierY){
+    downPressed=false;//new
+    rightPressed=false;
+    leftPressed=false;
     groundhogX1=320;
     groundhogY1=80;
     life-=score;
@@ -193,6 +196,7 @@ void draw() {
    if(mousePressed){
       gameState = GAME_RUN;
       life=2;
+
       //soldier
       soldier=loadImage("img/soldier.png");
       soldierX=-80;
