@@ -212,17 +212,36 @@ void draw() {
  break;
   }
  }
+
 void keyPressed() {
 if (key == CODED) { 
 switch (keyCode) {
 case DOWN:
 downPressed = true;
+if (rightPressed) {
+downPressed=false;
+}
+if (leftPressed) {
+downPressed=false;
+}
 break;
 case LEFT:
 leftPressed = true;
+if (rightPressed) {
+leftPressed=false;
+}
+if (downPressed) {
+leftPressed=false;
+}
 break;
 case RIGHT:
 rightPressed = true;
+if (leftPressed) {
+rightPressed=false;
+}
+if (downPressed) {
+rightPressed=false;
+}
 break;
     }
   }
